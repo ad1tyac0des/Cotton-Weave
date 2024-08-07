@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Epilogue;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+::selection{
+    background-color: #000;
+    color: #fff;
+}
+
+@font-face {
+    font-family: Epilogue;
+    src: url(Asset/Font/Epilogue-Variable.ttf);
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    /* background-color: red; */
+    display: flex;
+    align-items: flex-end;
+    gap: 130px;
+    padding: 160px 100px 0 100px;
+}
+
+#left{
+    width: 46%;
+    height: 100%;
+    /* background-color: lightgreen; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+
+#left h1{
+    /* background-color: red; */
+    font-size: 8vw;
+    line-height: 8vw;
+    font-weight: 400;
+}
+
+#left-bottom{
+    /* background-color: yellow; */
+    width: 100%;
+}
+
+#left-bottom #colors{
+    width: fit-content;
+    padding: 5px 10px;
+    margin-bottom: 50px;
+    border: 1px solid #333;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#colors h5{
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+#colors .color{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-left:5px;
+    cursor: pointer;
+}
+
+#colors #color1{
+    background-color: #7B6651;
+}
+
+#colors #color2{
+    background-color: #9A9CA1;
+}
+
+#colors .color:hover{
+    border: 1px solid rgb(255, 255, 255);
+}
+
+#left-bottom h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#left-bottom p{
+    font-size: 14px;
+    line-height: 23px;
+    width: 65%;
+    color: #444;
+}
+
+#right{
+    width: 26%;
+    height: 93%;
+    /* background-color: rgb(104, 142, 255); */
+    display:flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#right #right-top{
+    width: 100%;
+    height: 10%;
+    /* background-color: red; */
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#right-top h4{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#right-top h5{
+    font-size: 11px;
+    margin-right: 20px;
+}
+
+#right img{
+    width: 100%;
+    /* Image takes up the remaining space */
+    flex-grow: 1;  
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+}
+
+#right #circle{
+    position: absolute;
+    top: 27%;
+    right: -20%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #222;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#right #circle:hover{
+    background-color: #333;
+}
+
+#circle h5{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+#right #rotated{
+    font-size: 20px;
+    transform-origin: 0 0;
+    rotate: -90deg;
+    width: fit-content;
+    position: absolute;
+    bottom: 6%;
+    left: -13%;
+}
+
+
+/* ---------------------------------------------------------------- */
+/* Responsive Styles */
+@media (max-width: 768px) {
+    main{
+        height: fit-content;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14vw;
+        padding: 40px 50px;
+    }
+    
+    #left{
+        width: 100%;
+        height: fit-content;
+        justify-content: space-between;
+        gap: 20px;
+        padding-bottom: 0;
+    }
+    
+    #left h1{
+        font-size: 17vw;
+        line-height: 18vw;
+    }
+    
+    #left-bottom{
+        width: 100%;
+    }
+    
+    #left-bottom #colors{
+        margin-bottom: 30px;
+    }
+    
+    #colors h5{
+        font-size: 13px;
+        padding: 5px 6px;
+    }
+    
+    #colors .color{
+        width: 13px;
+        height: 13px;
+    }
+    
+    #left-bottom p{
+        font-size: 16px;
+        line-height: 25px;
+        width: 95%;
+        color: #444;
+    }
+    
+    #right{
+        width: 100%;
+        height: 100%;
+        flex-direction: column-reverse;
+    }
+
+    #right #right-top{
+        padding: 15px 0;
+    }
+    
+    #right-top h5{
+        font-size: 12px;
+        margin-right: 0px;
+    }
+    
+    #right img{
+        overflow: scroll;
+    }
+
+    #right #circle{
+        position: absolute;
+        top: 5%;
+        right: -4vh;
+        width: 100px; 
+        height: 100px;
+        transition: none;
+    }
+    
+    #circle h5{
+        font-size: 14px;
+    }
+    
+    #right #rotated{
+        font-size: 30px;
+        transform-origin: 0 0;
+        rotate: -90deg;
+        width: fit-content;
+        position: absolute;
+        bottom: 14.5vh;
+        left: -7%;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    #right #rotated{
+        font-size: 20px;
+        bottom: 8.5vh;
+        left: -8%;
+    }
+}
